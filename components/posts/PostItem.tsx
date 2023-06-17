@@ -8,13 +8,15 @@ import useCurrentUser from '@/hooks/useCurrentUser';
 import useLike from '@/hooks/useLike';
 
 import Avatar from '../Avatar';
-
 interface PostItemProps {
   data: Record<string, any>;
   userId?: string;
 }
 
-const PostItem: React.FC<PostItemProps> = ({ data = {}, userId }) => {
+const PostItem: React.FC<PostItemProps> = ({ 
+  data = {}, 
+  userId 
+}) => {
   const router = useRouter();
   const loginModal = useLoginModal();
 

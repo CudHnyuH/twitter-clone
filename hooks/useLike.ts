@@ -42,7 +42,14 @@ const useLike = ({ postId, userId }: { postId: string, userId?: string }) => {
     } catch (error) {
       toast.error('Something went wrong');
     }
-  }, [currentUser, hasLiked, postId, mutateFetchedPosts, mutateFetchedPost, loginModal]);
+  }, [
+    currentUser, 
+    hasLiked, 
+    postId, 
+    mutateFetchedPosts, 
+    mutateFetchedPost, 
+    loginModal
+  ]);
 
   return {
     hasLiked,

@@ -40,7 +40,14 @@ const useFollow = (userId: string) => {
     } catch (error) {
       toast.error('Something went wrong');
     }
-  }, [currentUser, isFollowing, userId, mutateCurrentUser, mutateFetchedUser, loginModal]);
+  }, [
+    currentUser, 
+    isFollowing, 
+    userId, 
+    mutateCurrentUser, 
+    mutateFetchedUser, 
+    loginModal
+  ]);
 
   return {
     isFollowing,

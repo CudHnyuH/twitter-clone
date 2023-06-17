@@ -9,7 +9,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
   }
 
   try {
-    const { currentUser } = await serverAuth(req);
+    const { currentUser } = await serverAuth(req, res);
     const { body } = req.body;
     const { postId } = req.query;
 
@@ -24,8 +24,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
         postId
       }
     });
-
-    // NOTIFICATION PART START
+    
     try {
       const post = await prisma.post.findUnique({
         where: {
@@ -54,7 +53,6 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
     catch (error) {
       console.log(error);
     }
-    // NOTIFICATION PART END
 
     return res.status(200).json(comment);
   } catch (error) {
