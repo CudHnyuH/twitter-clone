@@ -41,7 +41,7 @@ const EditModal = () => {
         try {
           setIsLoading(true);
     
-          await axios.patch('/pages/api/edit', { name, username, bio, profileImage, coverImage });
+          await axios.patch('/api/edit', { name, username, bio, profileImage, coverImage });
           mutateFetchedUser();
     
           toast.success('Updated');
